@@ -13,7 +13,7 @@ Installation is very simple
 - Drag And Drop The Plugin JAR File Inside Your **plugins** Folder
 
 ## Configuration
-```
+```white
 world:
   enabled: "true" # Should the visibility toggle item be given to players in a specific world.
   name: "world" # Name of the world.
