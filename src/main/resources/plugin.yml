@@ -2,6 +2,7 @@ name: HidePlayer
 version: '${project.version}'
 main: ga.pixelplayz.hideplayer.hideplayer.HidePlayer
 load: STARTUP
+softdepend: [ PlaceholderAPI ]
 authors: [ PixelPlayz ]
 description: Hide Players By Clicking The Dye In Your Inventory
 website: https://pixelplayz.ga
@@ -10,4 +11,4 @@ commands:
     description: hideplayer help for more info.
     permission: hideplayer
     permission-message: You Don't Have Permission
-    usage: /pixelplayz <subcommand>
+    usage: /hideplayer <subcommand>

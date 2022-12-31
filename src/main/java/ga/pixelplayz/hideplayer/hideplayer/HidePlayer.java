@@ -10,13 +10,20 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public final class HidePlayer extends JavaPlugin implements Listener {
+import java.util.HashMap;
+import java.util.UUID;
 
+public final class HidePlayer extends JavaPlugin implements Listener {
+    public static HashMap<UUID, String> hidden = new HashMap<>();
+    public static HashMap<UUID, String> shown = new HashMap<>();
     @Override
     public void onEnable() {
         System.out.println("§fHidePlayer >>> §aPlugin Has Been Enabled");
         getConfig().options().copyDefaults();
         saveDefaultConfig();
+        if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
+            new Placeholder(this).register();
+        }
         Bukkit.getPluginManager().registerEvents(new RightClickListener(this),this);
         Bukkit.getPluginManager().registerEvents(new PlayerJoinListener(this),this);
         Bukkit.getPluginManager().registerEvents(new reloadCommand(this),this);

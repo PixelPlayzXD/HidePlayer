@@ -12,7 +12,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.omg.CORBA.COMM_FAILURE;
 
 import java.util.Collections;
 
@@ -69,15 +68,23 @@ public class hidePlayerCommand implements CommandExecutor {
             }
         } else if (args[0].equalsIgnoreCase("hide")) {
             if (player.hasPermission("hideplayer.hide")){
-                int slot = (HidePlayer.getConfig().getInt("inventory.item-slot"))-1;
-                ItemStack item = obj5.ItemMaker("off",(ChatColor.WHITE+"Players: "+ChatColor.RED+"Hidden "+ChatColor.GRAY+"(Right Click)"), Collections.singletonList(ChatColor.GRAY + "Right-click to toggle player visibility"));
-                obj3.onHide(player, item, slot);
+                if(HidePlayer.getConfig().getString("item.enabled").equalsIgnoreCase("true")){
+                    int slot = (HidePlayer.getConfig().getInt("item.item-slot"))-1;
+                    ItemStack item = obj5.ItemMaker("off",(ChatColor.WHITE+"Players: "+ChatColor.RED+"Hidden "+ChatColor.GRAY+"(Right Click)"), Collections.singletonList(ChatColor.GRAY + "Right-click to toggle player visibility"));
+                    obj3.onHide(player, item, slot);
+                } else {
+                    obj3.onHideNoItem(player);
+                }
             }
         } else if (args[0].equalsIgnoreCase("show")) {
             if (player.hasPermission("hideplayer.show")){
-                int slot = (HidePlayer.getConfig().getInt("inventory.item-slot"))-1;
-                ItemStack item = obj5.ItemMaker("on",(ChatColor.WHITE+"Players: "+ChatColor.GREEN+"Visible "+ChatColor.GRAY+"(Right Click)"), Collections.singletonList(ChatColor.GRAY + "Right-click to toggle player visibility"));
-                obj4.onShow(player, item, slot);
+                if(HidePlayer.getConfig().getString("item.enabled").equalsIgnoreCase("true")){
+                    int slot = (HidePlayer.getConfig().getInt("item.item-slot"))-1;
+                    ItemStack item = obj5.ItemMaker("on",(ChatColor.WHITE+"Players: "+ChatColor.GREEN+"Visible "+ChatColor.GRAY+"(Right Click)"), Collections.singletonList(ChatColor.GRAY + "Right-click to toggle player visibility"));
+                    obj4.onShow(player, item, slot);
+                } else {
+                    obj4.onShowNoItem(player);
+                }
             }
         } else if (args[0].equalsIgnoreCase("help")) {
             if (player.hasPermission("hideplayer.show")){
