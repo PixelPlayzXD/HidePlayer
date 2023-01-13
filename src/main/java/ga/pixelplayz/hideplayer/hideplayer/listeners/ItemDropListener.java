@@ -20,7 +20,9 @@ public class ItemDropListener implements Listener {
     public void onPlayerDropItem(PlayerDropItemEvent event){
         ItemStack item = event.getItemDrop().getItemStack();
         if(item.equals(obj.ItemMaker("on",(ChatColor.WHITE+"Players: "+ChatColor.GREEN+"Visible "+ChatColor.GRAY+"(Right Click)"), Collections.singletonList(ChatColor.GRAY + "Right-click to toggle player visibility"))) || item.equals(obj.ItemMaker("off",(ChatColor.WHITE+"Players: "+ChatColor.RED+"Hidden "+ChatColor.GRAY+"(Right Click)"), Collections.singletonList(ChatColor.GRAY + "Right-click to toggle player visibility")))){
-            event.setCancelled(true);
+            if(event.getPlayer().hasPermission("hideplayer.dropitem")){
+                event.setCancelled(true);
+            }
         }
     }
 }
