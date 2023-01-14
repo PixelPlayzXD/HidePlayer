@@ -1,4 +1,4 @@
-# PixelPlayz Custom Item
+# HidePlayer
 
 Hide Other Players With The Click Of An Item On Your Server.
 
