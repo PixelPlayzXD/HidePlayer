@@ -29,14 +29,12 @@ public class PlayerJoinListener implements Listener {
         Player player = event.getPlayer();
         hidden.put(player.getUniqueId(), "false");
         shown.put(player.getUniqueId(), "true");
-        if(HidePlayer.getConfig().getString("item.enabled").equalsIgnoreCase("true")){
-            if(HidePlayer.getConfig().getString("world.enabled").equalsIgnoreCase("true")){
-                if((player.getWorld().getName()).equals(HidePlayer.getConfig().getString("world.name"))){
-                    giveItem(player);
-                }
-            } else {
-                giveItem(player);
+        if (HidePlayer.getConfig().getString("specific-rank").equalsIgnoreCase("true")){
+            if (player.hasPermission("hideplayer.item")){
+                preGiveCheck(player);
             }
+        } else {
+            preGiveCheck(player);
         }
     }
 
@@ -48,5 +46,17 @@ public class PlayerJoinListener implements Listener {
                 player.getInventory().setItem(slot, item_enabled);
             }
         }, 20);
+    }
+
+    public void preGiveCheck(Player player){
+        if(HidePlayer.getConfig().getString("item.enabled").equalsIgnoreCase("true")){
+            if(HidePlayer.getConfig().getString("world.enabled").equalsIgnoreCase("true")){
+                if((player.getWorld().getName()).equals(HidePlayer.getConfig().getString("world.name"))){
+                    giveItem(player);
+                }
+            } else {
+                giveItem(player);
+            }
+        }
     }
 }

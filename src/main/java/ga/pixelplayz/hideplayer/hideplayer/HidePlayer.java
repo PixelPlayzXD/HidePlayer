@@ -8,7 +8,9 @@ import ga.pixelplayz.hideplayer.hideplayer.listeners.PlayerJoinListener;
 import ga.pixelplayz.hideplayer.hideplayer.listeners.RightClickListener;
 import ga.pixelplayz.hideplayer.hideplayer.miscellaneous.TabCompletion;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.event.Listener;
+import org.bukkit.plugin.PluginLogger;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
@@ -19,7 +21,7 @@ public final class HidePlayer extends JavaPlugin implements Listener {
     public static HashMap<UUID, String> shown = new HashMap<>();
     @Override
     public void onEnable() {
-        System.out.println("§fHidePlayer >>> §aPlugin Has Been Enabled");
+        this.getLogger().info(ChatColor.WHITE+"HidePlayer >>> "+ChatColor.GREEN+"Plugin Has Been Enabled");
         getConfig().options().copyDefaults();
         saveDefaultConfig();
         if(Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
@@ -36,6 +38,6 @@ public final class HidePlayer extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        System.out.println("§fHidePlayer >>> §cPlugin Has Been Disabled");
+        this.getLogger().info(ChatColor.WHITE+"HidePlayer >>> "+ChatColor.RED+"Plugin Has Been Disabled");
     }
 }

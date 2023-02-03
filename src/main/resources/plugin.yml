@@ -1,7 +1,6 @@
 name: HidePlayer
-version: '1.3.0'
+version: '1.4.0'
 main: ga.pixelplayz.hideplayer.hideplayer.HidePlayer
-load: STARTUP
 softdepend: [ PlaceholderAPI ]
 authors: [ PixelPlayz ]
 description: Hide Players By Clicking The Dye In Your Inventory
