@@ -1,19 +1,27 @@
-name: Send Discord Embed for New Releases
+name: Send Discord Embed on Release
 
 on:
   release:
     types: [created]
 
 jobs:
-  send-discord-embed:
+  send_discord_embed:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Send Discord Embed
-      uses: SebastiaanZ/github-status-embed-for-discord@v0.3.0
-      with:
-        webhook_url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-        title: "New Release: ${{ github.event.release.name }}"
-        description: "${{ github.event.release.body }}"
-        url: "${{ github.event.release.html_url }}"
-        color: "#00ff7b"
+      - name: Send Discord Embed
+        uses: matthiaszarzecki/discord-webhook-action@v2
+        with:
+          url: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          username: Developer Bot
+          content: |
+            {
+              "embeds": [
+                {
+                  "title": "${{ github.event.release.name }}",
+                  "description": "${{ github.event.release.body }}",
+                  "url": "${{ github.event.release.html_url }}",
+                  "color": 00ff7b
+                }
+              ]
+            }
