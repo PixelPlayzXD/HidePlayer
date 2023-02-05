@@ -17,6 +17,6 @@ jobs:
           color: '#00ff7b'
           avatarUrl: https://raw.githubusercontent.com/PixelPlayzXD/HidePlayer/master/.github/workflows/logo.png
           description: '**${{ github.event.release.tag_name }} - ${{ github.event.release.name }}**'
-          details: '**[SpigotMC](https://www.spigotmc.org/resources/%E2%9C%A8-hideplayer-%E2%9C%A8-%E2%9A%A1-super-light-weight-%E2%9C%94%EF%B8%8F-visibility-toggle-item.106953/)     [Polymart](https://polymart.org/resource/hideplayer.3247)     [Github](${{ github.event.release.html_url }})**'
+          details: '**[SpigotMC](https://www.spigotmc.org/resources/%E2%9C%A8-hideplayer-%E2%9C%A8-%E2%9A%A1-super-light-weight-%E2%9C%94%EF%B8%8F-visibility-toggle-item.106953/)  |  [Polymart](https://polymart.org/resource/hideplayer.3247)  |  [Github](${{ github.event.release.html_url }})**'
           footer: 'PixelPlayz'
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
