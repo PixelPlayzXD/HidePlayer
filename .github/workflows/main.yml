@@ -10,18 +10,21 @@ jobs:
 
     steps:
       - name: Send Discord Embed
-        uses: matthiaszarzecki/discord-webhook-action@v2
+        uses: actions/github-script@v3
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
         with:
-          url: ${{ secrets.DISCORD_WEBHOOK_URL }}
-          username: Developer Bot
-          content: |
-            {
+          script: |
+            curl -X POST \
+            -H "Content-Type: application/json" \
+            -d '{
               "embeds": [
                 {
                   "title": "${{ github.event.release.name }}",
                   "description": "${{ github.event.release.body }}",
                   "url": "${{ github.event.release.html_url }}",
-                  "color": 00ff7b
+                  "color": 3066993
                 }
               ]
-            }
+            }' \
+            "$DISCORD_WEBHOOK_URL"
