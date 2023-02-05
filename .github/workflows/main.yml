@@ -1,8 +1,9 @@
 name: Send Discord Embed for New Releases
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+    - release/*
 
 jobs:
   send-discord-embed:
