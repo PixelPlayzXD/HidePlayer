@@ -1,9 +1,10 @@
 name: Send Discord Embed for New Releases
 
 on:
+  pull_request:
   push:
     branches:
-    - release/*
+      - 'releases/*'
 
 jobs:
   send-discord-embed:
