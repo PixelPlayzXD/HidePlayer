@@ -1,6 +1,6 @@
 # HidePlayer
 
-![Description](https://proxy.spigotmc.org/0ba7b3c6d0bbbbed5f4b4cf51c9afd27298aa0a3?url=https%3A%2F%2Fpixelplayz.ga%2Fhideplayer%2Fdescription.webp)
+![Description](https://pixelplayz.ga/hideplayer/description.webp)
 
 Hide Other Players With The Click Of An Item On Your Server.
 
