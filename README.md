@@ -1,5 +1,7 @@
 # HidePlayer
 
+More contribution helps make this plugin better than ever before.
+
 ![Description](https://pixelplayz.ga/hideplayer/description.webp)
 
 Hide Other Players With The Click Of An Item On Your Server.
