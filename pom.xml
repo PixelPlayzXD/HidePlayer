@@ -6,7 +6,7 @@
 
     <groupId>ga.pixelplayz.hideplayer</groupId>
     <artifactId>HidePlayer</artifactId>
-    <version>v1.0.0 - Release</version>
+    <version>v1.4.0 - Release</version>
     <packaging>jar</packaging>
 
     <name>HidePlayer</name>
