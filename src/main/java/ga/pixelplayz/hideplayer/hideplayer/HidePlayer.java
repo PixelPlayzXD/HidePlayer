@@ -1,5 +1,7 @@
 package ga.pixelplayz.hideplayer.hideplayer;
 
+import org.bstats.bukkit.Metrics;
+
 import ga.pixelplayz.hideplayer.hideplayer.commands.hidePlayerCommand;
 import ga.pixelplayz.hideplayer.hideplayer.commands.subcommands.hideCommand;
 import ga.pixelplayz.hideplayer.hideplayer.commands.subcommands.reloadCommand;
@@ -34,6 +36,8 @@ public final class HidePlayer extends JavaPlugin implements Listener {
         Bukkit.getPluginManager().registerEvents(new hideCommand(this), this);
         getCommand("hideplayer").setExecutor(new hidePlayerCommand(this));
         getCommand("hideplayer").setTabCompleter(new TabCompletion());
+        
+        Metrics metrics = new Metrics(this,17690);
     }
 
     @Override
