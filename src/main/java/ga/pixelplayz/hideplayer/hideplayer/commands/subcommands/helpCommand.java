@@ -5,6 +5,6 @@ import org.bukkit.command.CommandSender;
 
 public class helpCommand {
     public void onHelp(CommandSender sender){
-        sender.sendMessage(ChatColor.GOLD+"hideplayer:\n   "+ChatColor.YELLOW+" help: "+ChatColor.WHITE+"display this menu\n    "+ChatColor.YELLOW+"hide: "+ChatColor.WHITE+"hide all players\n    "+ChatColor.YELLOW+"show: "+ChatColor.WHITE+"show all players\n    "+ChatColor.YELLOW+"reload: "+ChatColor.WHITE+"reload the plugin");
+        sender.sendMessage(ChatColor.DARK_GRAY+"------------[--: "+ChatColor.GREEN+"HidePlayer: "+ChatColor.DARK_GRAY+"--]------------\n   "+ChatColor.YELLOW+"/help: "+ChatColor.GRAY+"- Display This Menu\n    "+ChatColor.YELLOW+"/hide: "+ChatColor.GRAY+"- Hide All Players\n    "+ChatColor.YELLOW+"/show: "+ChatColor.GRAY+"- Show All Players\n    "+ChatColor.YELLOW+"/reload: "+ChatColor.GRAY+"- Reload The Plugin\n "+ChatColor.DARK_GRAY+"------------------------------------------");
     }
 }
