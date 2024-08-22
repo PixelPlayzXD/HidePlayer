@@ -13,7 +13,9 @@ More contribution helps make this plugin better than ever before.
 <details>
   <summary><strong>Preview</strong></summary>
   <p align="center">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/8kBM48VPdh4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <a href="https://www.youtube.com/watch?v=8kBM48VPdh4">
+      <img src="https://img.youtube.com/vi/8kBM48VPdh4/0.jpg" alt="YouTube Video" width="560" height="315">
+    </a>
   </p>
 </details>
 
